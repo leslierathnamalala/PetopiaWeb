@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeaderLayoutComponent } from './components/header-layout/header-layout.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: HeaderLayoutComponent,
+    component: LandingPageComponent,
   }
 ];
 
