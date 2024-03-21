@@ -1,0 +1,39 @@
+<div class="shell">
+    <div class="container">
+        <div class="row">
+            <ng-container *ngFor="let item of dataSource">
+                <div [class]="item.isPro ? 'col-md-6' :'col-md-3'">
+                    <div class="wsk-cp-product">
+                        <div class="wsk-cp-img">
+                            <img [src]="item.imageUrl1" class="img-responsive" />
+                        </div>
+                        <div class="wsk-cp-text">
+                            <div class="category">
+                                <span>{{item.petType}}</span>
+                            </div>
+                            <div class="title-product">
+                                <h3>{{item.heading}}</h3>
+                            </div>
+                            <div class="description-prod">
+                                <p>{{item.description}}</p>
+                            </div>
+                            <div class="card-footer">
+                                <div class="wcf-left"><span class="price">Rs {{item.price}}</span></div>
+                                <div class="wcf-right">
+                                    <a class="buy-btn">
+                                        <mat-icon class="mt-2" aria-hidden="false" aria-label="Example home icon"
+                                            fontIcon="add_shopping_cart"></mat-icon>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+
+        <mat-paginator [pageSize]="paginationType.landingPageSize" [pageSizeOptions]="paginationType.pageSizeOption"
+            aria-label="Select page" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.skeleton {
+    height: 20px;
+    width: 90%;
+    background-color: #f3f3f3;
+    animation: skeleton-loading 1s ease-in-out infinite;
+  }
+  
+  @keyframes skeleton-loading {
+    0% {
+      background-color: #f3f3f3;
+    }
+    50% {
+      background-color: #e0e0e0;
+    }
+    100% {
+      background-color: #f3f3f3;
+    }
+  }

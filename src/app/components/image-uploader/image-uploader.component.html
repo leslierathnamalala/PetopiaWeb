@@ -1,0 +1,22 @@
+<h2>Upload Images</h2>
+<div class="scrollable-content">
+  <div class="container-fluid">
+    <ngx-dropzone (change)="onSelect($event)" [multiple]="false">
+      <ngx-dropzone-label>Drag and Drop here</ngx-dropzone-label>
+      <ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+        <ngx-dropzone-label>{{ files.name }} ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-preview>
+    </ngx-dropzone>
+  </div>
+</div>
+<div class="dialog-footer">
+  <button mat-stroked-button color="primary" class="float-right mt-2" [disabled]="(isLoading | async) === true"
+    (click)="close()">close</button>
+  <button mat-raised-button color="primary" [disabled]="(isLoading | async) === true" class="float-right mt-2 mr-2"
+    (click)="onUpload()">Upload
+    <mat-icon *ngIf="(isLoading | async) === true">
+      <mat-spinner color="warn" diameter="20">
+      </mat-spinner>
+    </mat-icon>
+  </button>
+</div>

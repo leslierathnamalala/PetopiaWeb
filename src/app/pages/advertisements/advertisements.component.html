@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-12">
+        <button mat-icon-button color="primary" class="fb-btn-sacramento float-right ml-2" (click)="loadAdds()">
+            <mat-icon>cached</mat-icon>
+        </button>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-xl-12">
+        <table *ngIf="(isLoading | async) === false; else skeletonVoucher" mat-table [dataSource]="dataSource"
+            class="mat-elevation-z8 mt-4 w-100">
+
+            <ng-container matColumnDef="advertisementId">
+                <th mat-header-cell *matHeaderCellDef> Id</th>
+                <td mat-cell *matCellDef="let element"> {{element.advertisementId}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="heading">
+                <th mat-header-cell *matHeaderCellDef> Title</th>
+                <td mat-cell *matCellDef="let element"> {{element.heading}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="petType">
+                <th mat-header-cell *matHeaderCellDef> Type</th>
+                <td mat-cell *matCellDef="let element"> {{element.petType}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="createdOn">
+                <th mat-header-cell *matHeaderCellDef> Created Date </th>
+                <td mat-cell *matCellDef="let element"> {{ element.createdOn | CustomDateFormat }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="breed">
+                <th mat-header-cell *matHeaderCellDef> Breed </th>
+                <td mat-cell *matCellDef="let element"> {{ element.breed }} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef> Price </th>
+                <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="reactions">
+                <th mat-header-cell *matHeaderCellDef> Reactions </th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.reactions != null ? element.reactions :" No reactions"}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="adsGridColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: adsGridColumns;"></tr>
+        </table>
+        <mat-paginator [pageSize]="paginationType.dashboardPageSize" [pageSizeOptions]="paginationType.pageSizeOption"
+            aria-label="Select page" [showFirstLastButtons]="true">
+        </mat-paginator>
+    </div>
+</div>
+
+<ng-template #skeletonVoucher>
+    <app-skeleton [columnsIds]="adsGridColumns" [columnsNames]="adsGridColumnNames" [rows]="5"></app-skeleton>
+</ng-template>

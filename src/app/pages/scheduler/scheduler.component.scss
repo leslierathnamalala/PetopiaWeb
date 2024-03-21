@@ -1,0 +1,10 @@
+.available-event {
+    background-color: rgb(4, 57, 39);
+    color: white;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+
+  :host::ng-deep.fc-button-primary{
+    background-color: rgb(4, 57, 39) !important;
+  }

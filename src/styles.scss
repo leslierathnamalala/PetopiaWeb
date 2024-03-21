@@ -1,1 +1,132 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "poppins";
+}
+
+.foodbox-v2 {
+    background: url('./assets/img/brand/loging-bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.bg-sacramento {
+    background-color: rgb(4, 57, 39);
+}
+
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+    background-color: rgb(4, 57, 39) !important;
+}
+
+::ng-deep.mat-button.mat-primary, .mat-icon-button.mat-primary, .mat-stroked-button.mat-primary {
+    color: rgb(4, 57, 39) !important;
+}
+
+.mat-stroked-button.mat-button-wrapper {
+    color: rgb(4, 57, 39) !important;
+}
+
+
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+    background-color: rgb(4, 57, 39) !important;
+    color: #fff !important;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: rgb(4, 57, 39) !important;
+}
+
+.mat-input-element {
+    caret-color: rgb(4, 57, 39) !important;
+}
+
+.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-thumb {
+    background-color: rgb(4, 57, 39) !important;
+}
+
+.mat-slide-toggle.mat-primary.mat-checked .mat-slide-toggle-bar {
+    background-color: rgb(120, 124, 114) !important;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: rgb(4, 57, 39) !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle {
+    background-color: rgb(120, 124, 114) !important;
+}
+
+.fb-btn-sacramento {
+    background-color: rgb(4, 57, 39);
+    color: white;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 1),
+        0 1px 1px 0 rgba(0, 0, 0, 1),
+        0 1px 3px 0 rgba(0, 0, 0, 1);
+}
+
+.align-center {
+    display: flex;
+    justify-content: center;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+::ng-deep.mat-tooltip {
+    zoom: 2 !important;
+}
+
+::ng-deep.mat-tooltip .mat-tooltip-show {
+    zoom: 2 !important;
+}
+
+.corner-ribbon {
+    width: 200px;
+    background: #e43;
+    position: absolute;
+    top: 25px;
+    left: -50px;
+    text-align: center;
+    line-height: 65px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    font-weight: 900;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    z-index: 999;
+}
+
+.corner-ribbon.sticky {
+    position: fixed;
+}
+
+.corner-ribbon.bottom-left {
+    top: auto;
+    bottom: -10px;
+    left: -75px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.corner-ribbon.grey {
+    background: #999;
+}

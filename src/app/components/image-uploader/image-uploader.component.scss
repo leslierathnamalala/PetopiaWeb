@@ -1,0 +1,49 @@
+.scrollable-content {
+    height: 180px;
+    overflow: auto;
+}
+
+:host::ng-deep.cdk-overlay-pane {
+    width: 50vw !important;
+}
+
+:host::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(4, 57, 39) !important;
+}
+
+:host::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(4, 57, 39) !important;
+}
+
+:host::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: rgb(4, 57, 39) !important;
+}
+
+:host::ng-deep.mat-form-field.mat-focused .mat-form-field-label {
+    color: #6ba500 !important;
+}
+
+:host::ng-deep.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #6ba500 !important;
+}
+
+:host::ng-deep.mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid) .mat-form-field-infix::after {
+    color: #6ba500 !important;
+}
+
+:host::ng-deep.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #6ba500 !important;
+}
+
+:host::ng-deep.mat-input-element {
+    caret-color: #6ba500 !important;
+}
+
+:host::ng-deep .mat-button.mat-primary,
+.mat-icon-button.mat-primary,
+.mat-stroked-button.mat-primary {
+    color: rgb(4, 57, 39) !important;
+}

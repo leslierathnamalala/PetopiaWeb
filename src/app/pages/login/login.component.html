@@ -1,0 +1,16 @@
+<div class="window">
+  <span class="h1 color-brg">Sign In</span>
+  <form [formGroup]="loginForm">
+    <input type="email" class="mt-4 form-control" placeholder="Your email" placeholder="Email" formControlName="Email">
+    <input type="password" class="mt-2 form-control" formControlName="Password" placeholder="Your password">
+  </form>
+
+  <button [disabled]="isMfaLogin" mat-raised-button color="primary" class="my-4 mt-2 w-100" (click)="loginEvent()">Sign
+    in
+    <mat-icon *ngIf="(isLoading | async) === true">
+      <mat-spinner color="warn" diameter="20">
+      </mat-spinner>
+    </mat-icon>
+  </button>
+  <button mat-button color="primary"  (click)="goToSignup()">Not a member?</button>
+</div>

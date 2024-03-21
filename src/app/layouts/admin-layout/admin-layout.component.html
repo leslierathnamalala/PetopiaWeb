@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <div class="row w-100">
+    <div class="col-12">
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>{{pageName}}</span>
+      <span class="menu-spacer"></span>
+      <button mat-button [matMenuTriggerFor]="menu" class="float-right">{{userName}}</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="doLogout()">Logout</button>
+        <button *ngIf="isAdmin" mat-menu-item (click)="reLoadConfig()">Reload config</button>
+      </mat-menu>
+    </div>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav class="mat-elevation-z8">
+    <img class="brand-img" src="./assets/img/brand/logo--color.png" />
+    <mat-divider></mat-divider>
+    <ul class="navbar-nav">
+      <li *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+        <a routerLinkActive="active" [routerLink]="[menuItem.path]" class="nav-link">
+          <i class="ni {{menuItem.icon}}"></i>
+          {{menuItem.title}}
+        </a>
+      </li>
+    </ul>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="content-x mat-elevation-z8">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

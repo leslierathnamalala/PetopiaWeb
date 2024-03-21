@@ -1,0 +1,57 @@
+<mat-stepper [linear]="true" #stepper class="window">
+  <mat-step [editable]="false">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Setup Your Account</ng-template>
+      <input type="email" formControlName="userEmail" type="text" class="mt-4 form-control" placeholder="Email">
+      <input type="password" class="mt-2 form-control" formControlName="NewPassword" placeholder="Your password">
+      <input type="password" class="mt-2 form-control" formControlName="ReNewPassword" placeholder="Confirm password">
+      <div>
+        <button mat-stroked-button (click)="close()" color="primary" class="txt-white">Cancel</button>
+        <button [disabled]="
+            firstFormGroup.value.userEmail === null || 
+            firstFormGroup.value.userEmail === '' || 
+            firstFormGroup.value.NewPassword === null || 
+            firstFormGroup.value.NewPassword === '' || 
+            firstFormGroup.value.ReNewPassword === null ||
+            firstFormGroup.value.NewPassword !== firstFormGroup.value.ReNewPassword" mat-raised-button color="primary"
+          class="my-4 ml-3" (click)="register(stepper)">Register
+          <mat-icon *ngIf="(isLoading | async) === true">
+            <mat-spinner color="warn" diameter="20">
+            </mat-spinner>
+          </mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step label="Register" [editable]="false">
+    <form [formGroup]="secondFormGroup">
+      <input type="email" class="mt-4 form-control" [readOnly]="true" formControlName="username">
+      <div class="row mt-4 width-550">
+        <div class="col-6">
+          <input class="mt-4 form-control" placeholder="Your NIC" formControlName="nic">
+          <input class="mt-4 form-control" placeholder="First Name" formControlName="firstName">
+          <input class="mt-4 form-control" placeholder="Last Name" formControlName="lastName">
+          <mat-select class="mt-4 form-control" placeholder="Type" formControlName="userType">
+            <mat-option [value]="1">Advertiser</mat-option>
+            <mat-option [value]="2">Clinician</mat-option>
+          </mat-select>
+        </div>
+        <div class="col-6">
+          <input class="mt-4 form-control" placeholder="District" formControlName="district">
+          <input class="mt-4 form-control" placeholder="Province" formControlName="province">
+          <input class="mt-4 form-control" placeholder="City" formControlName="city">
+          <input type="number" class="mt-4 form-control" placeholder="Zip Code" formControlName="zipCode">
+        </div>
+      </div>
+      <div>
+        <button mat-stroked-button (click)="close()" color="primary" class="txt-white">Cancel</button>
+        <button mat-raised-button color="primary" class="my-4 ml-3" (click)="SignupEvent()">Finish
+          <mat-icon *ngIf="(isLoading | async) === true">
+            <mat-spinner color="warn" diameter="20">
+            </mat-spinner>
+          </mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-step>
+</mat-stepper>

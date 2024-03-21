@@ -1,0 +1,15 @@
+image: node:18.17.0
+
+pipelines:
+  branches:
+    release/prod:
+      - step:
+          name: Build and Deploy (Prod)
+          caches:
+            - node
+          script:
+            # Install dependencies
+            - npm install --save --legacy-peer-deps
+            # Build the Angular app for production
+            - npm run build
+            # Add any other deployment steps you need
