@@ -9,17 +9,17 @@
 
 :host::ng-deep .mat-focused .mat-form-field-label {
     /*change color of label*/
-    color: rgb(4, 57, 39) !important;
+    color: #00ba2f !important;
 }
 
 :host::ng-deep.mat-form-field-underline {
     /*change color of underline*/
-    background-color: rgb(4, 57, 39) !important;
+    background-color: #00ba2f !important;
 }
 
 :host::ng-deep.mat-form-field-ripple {
     /*change color of underline when focused*/
-    background-color: rgb(4, 57, 39) !important;
+    background-color: #00ba2f !important;
 }
 
 :host::ng-deep.mat-form-field.mat-focused .mat-form-field-label {
@@ -45,5 +45,5 @@
 :host::ng-deep .mat-button.mat-primary,
 .mat-icon-button.mat-primary,
 .mat-stroked-button.mat-primary {
-    color: rgb(4, 57, 39) !important;
+    color: #00ba2f !important;
 }
