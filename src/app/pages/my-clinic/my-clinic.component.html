@@ -1,1 +1,135 @@
-this component is working
+<form [formGroup]="clinicFormGroup">
+    <div class="row">
+        <div class="col-12">
+            <mat-form-field appearance="fill">
+                <mat-label>Clinic Name</mat-label>
+                <textarea matInput formControlName="clinicName" placeholder="ClinicName"></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <div class="wsk-cp-product">
+                <div class="wsk-cp-img"><img [src]="imageUrl" alt="Product" class="img-responsive" /></div>
+                <div class="wsk-cp-text">
+                    <div class="category">
+                        <span> <button mat-button color="primary" (click)="upload()">Upload</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-8">
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Address 1</mat-label>
+                        <textarea matInput formControlName="address1" placeholder="Address 1"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Address 2</mat-label>
+                        <textarea matInput formControlName="address2" placeholder="Address 2"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Address 3</mat-label>
+                        <input matInput formControlName="address3" placeholder="Address 3">
+                    </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Type</mat-label>
+                        <mat-select placeholder="Type" formControlName="type">
+                            <mat-option [value]="'Clinic'">Clinic</mat-option>
+                            <mat-option [value]="'Pet Hospital'">Pet Hospital</mat-option>
+                            <mat-option [value]="'Pet Care Center'">Pet Care Center</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Services</mat-label>
+                        <mat-select formControlName="services" multiple>
+                            <mat-select-trigger>
+                                {{clinicFormGroup.value?.services?.[0] || ''}}
+                                <span *ngIf="((clinicFormGroup.value?.services?.length || 0) > 1)"
+                                    class="example-additional-selection">
+                                    (+{{(clinicFormGroup.value?.services?.length || 0) - 1}}
+                                    {{clinicFormGroup.value?.services?.length === 2 ? 'other' :
+                                    'others'}})
+                                </span>
+                            </mat-select-trigger>
+                            <mat-option [value]="'Comprehensive Pain Control'">Comprehensive Pain Control</mat-option>
+                            <mat-option [value]="'Advanced Anesthesia'">Advanced Anesthesia</mat-option>
+                            <mat-option [value]="'Companion Animal Surgery'">Companion Animal Surgery</mat-option>
+                            <mat-option [value]="'Companion Animal Medical Services'">Companion Animal Medical
+                                Services</mat-option>
+                            <mat-option [value]="'Dental Services'">Dental Services</mat-option>
+                            <mat-option [value]="'Equine Services'">Equine Services</mat-option>
+                            <mat-option [value]="'Laboratory Services'">Laboratory Services</mat-option>
+                            <mat-option [value]="'Pet Salon'">Pet Salon</mat-option>
+                            <mat-option [value]="'House Visits'">House Visits</mat-option>
+                            <mat-option [value]="'In-house Pharmacy'">In-house Pharmacy</mat-option>
+                            <mat-option [value]="'International Pet Relocation'">International Pet
+                                Relocation</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-6">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Contact</mat-label>
+                        <input matInput formControlName="contact" mask="000 000 0000" placeholder="contact">
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" placeholder="Email">
+            </mat-form-field>
+        </div>
+        <div class="col-3">
+            <mat-form-field appearance="fill">
+                <mat-label>Website</mat-label>
+                <input matInput formControlName="website" placeholder="Website">
+            </mat-form-field>
+        </div>
+        <div class="col-3">
+            <mat-form-field appearance="fill">
+                <mat-label>Open Hours Form</mat-label>
+                <input matInput formControlName="from" matTimepicker>
+            </mat-form-field>
+        </div>
+        <div class="col-3">
+            <mat-form-field appearance="fill">
+                <mat-label>Open Hours To</mat-label>
+                <input matInput formControlName="to" matTimepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <mat-slide-toggle color="primary" [formControl]="isTwentyFourSeven">
+                24X7 Opened?
+            </mat-slide-toggle>
+            <button mat-raised-button color="primary" class="float-right mb-4 mr-4"
+                [ngClass]="{'blur-text': isLoading | async}"
+                (click)="isClinicAvailable === false ? saveClinic() : updateClinic()">
+                {{isClinicAvailable === false ? 'Save' : 'Update'}}
+                <mat-icon *ngIf="isLoading | async">
+                    <mat-spinner color="warn" diameter="20">
+                    </mat-spinner>
+                </mat-icon>
+            </button>
+        </div>
+    </div>
+</form>

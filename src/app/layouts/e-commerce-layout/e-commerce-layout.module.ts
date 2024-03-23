@@ -9,6 +9,7 @@ import { MaterialModule } from '../../material/material.module';
 import { ECommerceRoutingModule } from './e-commerce-layout.routing.module';
 import { LandingPageComponent } from '../../pages/landing-page/landing-page.component';
 import { ECommerceComponent } from 'src/app/pages/e-commerce/e-commerce.component';
+import { ClinicsComponent } from 'src/app/pages/clinics/clinics.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { ECommerceComponent } from 'src/app/pages/e-commerce/e-commerce.componen
   ],
   declarations: [
     LandingPageComponent,
-    ECommerceComponent
+    ECommerceComponent,
+    ClinicsComponent
   ]
 })
 export class EcommerceLayoutModule { }

@@ -1,1 +1,29 @@
-E Commerce working
+<div class="container">
+    <div class="feed">
+        <div class="card" *ngFor="let item of dataSource">
+            <div class="info"><img src="https://source.unsplash.com/rDEOVtE7vOs/150x150" />
+                <div class="user">
+                    <div class="handle">@AnabelB</div>
+                    <div class="community">{{item.address1}}</div>
+                </div>
+                <div class="options fa-solid fa-ellipsis"></div>
+            </div>
+            <div class="title">{{item.clinicName}}</div>
+            <div class="image"> <img class="main" [src]="item.imageUrl" /><img class="shadow" [src]="item.imageUrl" />
+            </div>
+            <div class="text">Services we provide {{item.services}}</div>
+            <div class="meta">
+                <div class="votes">
+                    {{item.contact}}
+                </div>
+                <div class="comments">
+                    {{item.type}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <mat-paginator [pageSize]="paginationType.landingPageSize" [pageSizeOptions]="paginationType.pageSizeOption"
+        aria-label="Select page" [showFirstLastButtons]="true">
+    </mat-paginator>
+</div>

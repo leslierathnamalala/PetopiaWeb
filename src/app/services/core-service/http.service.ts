@@ -30,6 +30,11 @@ export class HttpService {
     return this.http.put<ResponseModel>(`${environment.petopiaApiUrl + url}`, body, { headers: header, observe: 'response' });
   }
 
+  delete(url: string): Observable<ResponseModel> {
+    const header: any = this.createHeader()
+    return this.http.delete<ResponseModel>(`${environment.petopiaApiUrl + url}`, { headers: header, observe: 'response' });
+  }
+
   patch(url: string, body: any): Observable<ResponseModel> {
     const header: any = this.createHeader()
     return this.http.patch<ResponseModel>(`${environment.petopiaApiUrl + url}`, body, { headers: header, observe: 'response' });

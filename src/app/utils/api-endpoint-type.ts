@@ -6,4 +6,7 @@ export enum Endpoint {
   AdvertisementCrud = 'Advertisements',
   GetAdsByUserId = 'Advertisements/GetAdsByUserId',
   GetAllAds = 'Advertisements/GetAllAds',
+  ClinicsCrud = 'Clinics',
+  GetClinicByUserId = 'Clinics/GetClinicByUserId',
+  GetAllClinics = 'Clinics/GetAllClinics',
 }

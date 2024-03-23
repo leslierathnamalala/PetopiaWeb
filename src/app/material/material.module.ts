@@ -48,6 +48,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { ClipboardModule } from 'ngx-clipboard';
+import { MatTimepickerModule } from 'mat-timepicker';
 
 @NgModule({
   declarations: [],
@@ -103,6 +104,7 @@ import { ClipboardModule } from 'ngx-clipboard';
     PortalModule,
     ScrollingModule,
     DialogModule,
+    MatTimepickerModule
   ],
   providers: [
     {
