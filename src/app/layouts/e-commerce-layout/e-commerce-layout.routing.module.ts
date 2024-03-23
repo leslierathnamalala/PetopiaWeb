@@ -31,10 +31,6 @@ export const AuthLayoutRoutes: Routes = [
     {
         path: 'marketplace',
         component: MarketPlaceComponent
-    },
-    {
-        path: 'appointment',
-        component: AppointmentsAddComponent
     }
 ];
 

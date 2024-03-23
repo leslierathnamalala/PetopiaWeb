@@ -1,7 +1,7 @@
 <div class="row mt-4">
     <div class="col-12">
-        <ul class="listing">
-            <li class="product" *ngFor="let item of dataSource">
+        <div class="row listing">
+            <div class="col-3 product" *ngFor="let item of dataSource">
                 <a class="img-wrapper" href="#">
                     <img [src]="item.imageUrl1" alt="img1" />
                 </a>
@@ -15,8 +15,8 @@
                     <a href="#" class="add-btn buy">view</a>
                     <a href="#" class="add-btn cart">{{item.contact}}</a>
                 </div>
-            </li>
-        </ul>
+            </div>
+        </div>
     </div>
 </div>
 

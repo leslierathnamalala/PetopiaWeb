@@ -11,4 +11,6 @@ export enum Endpoint {
   GetAllClinics = 'Clinics/GetAllClinics',
   PetShopItemsCrud = 'PetShopItems',
   GetAllItems = 'PetShopItems/GetAllItems',
+  AppointmentCrud = 'Appointments',
+  GetAllAppointments = 'Appointments/GetAllAppointments',
 }

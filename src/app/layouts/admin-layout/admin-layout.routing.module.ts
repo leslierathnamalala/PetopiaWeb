@@ -28,7 +28,7 @@ export const AdminLayoutRoutes: Routes = [
         canActivate: [AuthGuard]
     },
     {
-        path: 'pet-shop',
+        path: 'pet-shop-advertising',
         component: PetItemAdvertisingComponent,
         canActivate: [AuthGuard]
     },

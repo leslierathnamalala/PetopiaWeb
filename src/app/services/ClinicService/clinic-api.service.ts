@@ -11,6 +11,10 @@ import { Endpoint } from 'src/app/utils/api-endpoint-type';
 export class ClinicApiService {
   constructor(private httpService: HttpService) { }
 
+  GetAllClinicList(): Observable<ResponseModel> {
+    return this.httpService.get(Endpoint.ClinicsCrud);
+  }
+
   GetClinicById(clinicId: string): Observable<ResponseModel> {
     return this.httpService.get(Endpoint.ClinicsCrud + `/${clinicId}`);
   }

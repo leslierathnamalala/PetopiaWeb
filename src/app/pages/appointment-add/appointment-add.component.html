@@ -1,1 +1,55 @@
-this component is working
+<form [formGroup]="formGroup" class="window">
+    <span class="h1 color-brg mt-4">Add Appoinment</span>
+
+    <div class="row">
+        <div class="col-6">
+            <mat-form-field>
+                <mat-select placeholder="Clinic" formControlName="clinicId">
+                    <mat-option *ngFor="let item of dataSource" [value]="item.clinicId">{{item.clinicName}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field>
+                <input matInput placeholder="Phone Number" mask="000 000 0000"
+                    formControlName="contact">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <mat-form-field>
+                <input matInput placeholder="Full Name" formControlName="name">
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" [min]="today" #ref
+                    formControlName="date" required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <mat-form-field>
+                <input matInput placeholder="From" formControlName="from" matTimepicker>
+            </mat-form-field>
+        </div>
+        <div class="col-6">
+            <mat-form-field>
+                <input matInput placeholder="To" formControlName="to" matTimepicker>
+            </mat-form-field>
+        </div>
+    </div>
+    <div>
+        <button mat-stroked-button (click)="close()" color="primary" class="txt-white">Cancel</button>
+        <button mat-raised-button color="primary" class="my-4 ml-3" (click)="SignupEvent()">Finish
+            <mat-icon *ngIf="(isLoading | async) === true">
+                <mat-spinner color="warn" diameter="20">
+                </mat-spinner>
+            </mat-icon>
+        </button>
+    </div>
+</form>
