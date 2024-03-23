@@ -4,17 +4,17 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, Subscription } from 'rxjs';
 import { ImageUploaderComponent } from 'src/app/components/image-uploader/image-uploader.component';
-import { UserGeneral } from 'src/app/models/user/user-general.model';
+import { UserGeneral, UserType } from 'src/app/models/user/user-general.model';
 import { AdvertisementApiService } from 'src/app/services/advertisement/advertisement-api.service';
 import { UserDataService } from 'src/app/services/user/user-data.service';
 import { SnackbarService } from '../../services/core-service/snakbar.service';
 
 @Component({
-  selector: 'app-advertising',
-  templateUrl: './advertising.component.html',
-  styleUrls: ['./advertising.component.scss']
+  selector: 'app-pet-advertising',
+  templateUrl: './pet-advertising.component.html',
+  styleUrls: ['./pet-advertising.component.scss']
 })
-export class AdvertisingComponent implements OnInit, OnDestroy {
+export class PetAdvertisingComponent implements OnInit, OnDestroy {
 
   subscription: Subscription = new Subscription();
   userInfo: UserGeneral;
@@ -32,7 +32,7 @@ export class AdvertisingComponent implements OnInit, OnDestroy {
     price: ['', Validators.required],
   });
   isPro: FormControl = new FormControl(false);
-
+  isAdvertiser: boolean = false;
 
   constructor(
     public dialog: MatDialog,
@@ -44,7 +44,7 @@ export class AdvertisingComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-
+    this.isAdvertiser = this.userDataService.loggedInUser.userType === UserType.Advertiser;
   }
 
   upload1(): void {
@@ -103,7 +103,7 @@ export class AdvertisingComponent implements OnInit, OnDestroy {
       isPro: this.isPro.value,
       imageUrl1: this.imageUrl1,
       imageUrl2: this.imageUrl2,
-      imageUrl3: this.imageUrl3,
+      imageUrl3: this.imageUrl3
     }
 
     this.subscription.add(this.advertisementApiService.AdvertisementAdd(advertisement).subscribe((res: any) => {

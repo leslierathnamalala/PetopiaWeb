@@ -10,6 +10,9 @@ import { ECommerceRoutingModule } from './e-commerce-layout.routing.module';
 import { LandingPageComponent } from '../../pages/landing-page/landing-page.component';
 import { ECommerceComponent } from 'src/app/pages/e-commerce/e-commerce.component';
 import { ClinicsComponent } from 'src/app/pages/clinics/clinics.component';
+import { PetShopComponent } from 'src/app/pages/pet-shop/pet-shop.component';
+import { PetShopItemsComponent } from 'src/app/pages/pet-shop/pet-shop-items/pet-shop-items.component';
+import { MarketPlaceComponent } from 'src/app/pages/market-place/market-place.component';
 
 @NgModule({
   imports: [
@@ -28,7 +31,10 @@ import { ClinicsComponent } from 'src/app/pages/clinics/clinics.component';
   declarations: [
     LandingPageComponent,
     ECommerceComponent,
-    ClinicsComponent
+    ClinicsComponent,
+    PetShopComponent,
+    PetShopItemsComponent,
+    MarketPlaceComponent
   ]
 })
 export class EcommerceLayoutModule { }

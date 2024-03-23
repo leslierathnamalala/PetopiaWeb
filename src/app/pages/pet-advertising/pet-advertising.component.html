@@ -1,5 +1,5 @@
 <mat-stepper [linear]="true" #stepper class="window">
-    <mat-step [editable]="false" label="Add Advertisement">
+    <mat-step  label="Add Advertisement">
         <form [formGroup]="advertisingFormGroup">
             <div class="row">
                 <div class="col-12">
@@ -92,7 +92,7 @@
             </div>
         </form>
     </mat-step>
-    <mat-step label="Payment" [editable]="false">
+    <mat-step *ngIf="isAdvertiser" label="Payment" >
         <div class="payment">
             <div class="payment-customer">
                 <h2>Ivan Yew</h2>
@@ -175,7 +175,7 @@
             </div>
         </div>
     </mat-step>
-    <mat-step label="Save" [editable]="false">
+    <mat-step label="Save" >
         <ng-template matStepLabel>Finish</ng-template>
         <div class="card fixed-height">
             <div class="card-body">

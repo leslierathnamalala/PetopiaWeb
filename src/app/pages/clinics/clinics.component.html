@@ -1,23 +1,23 @@
 <div class="container">
     <div class="feed">
         <div class="card" *ngFor="let item of dataSource">
-            <div class="info"><img src="https://source.unsplash.com/rDEOVtE7vOs/150x150" />
+            <div class="info"><img [src]="item.userImage" />
                 <div class="user">
-                    <div class="handle">@AnabelB</div>
-                    <div class="community">{{item.address1}}</div>
+                    <div class="handle">{{item.userName}}</div>
+                    <div class="community">{{item.clinic.address1}}</div>
                 </div>
                 <div class="options fa-solid fa-ellipsis"></div>
             </div>
-            <div class="title">{{item.clinicName}}</div>
-            <div class="image"> <img class="main" [src]="item.imageUrl" /><img class="shadow" [src]="item.imageUrl" />
+            <div class="title">{{item.clinic.clinicName}}</div>
+            <div class="image"> <img class="main" [src]="item.clinic.imageUrl" /><img class="shadow" [src]="item.clinic.imageUrl" />
             </div>
-            <div class="text">Services we provide {{item.services}}</div>
+            <div class="text">Services we provide: {{item.clinic.services}}</div>
             <div class="meta">
                 <div class="votes">
-                    {{item.contact}}
+                    {{item.clinic.contact}}
                 </div>
                 <div class="comments">
-                    {{item.type}}
+                    {{item.clinic.type}}
                 </div>
             </div>
         </div>

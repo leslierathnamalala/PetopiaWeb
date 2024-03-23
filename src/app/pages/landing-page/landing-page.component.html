@@ -1,39 +1,46 @@
-<div class="shell">
-    <div class="container">
-        <div class="row">
-            <ng-container *ngFor="let item of dataSource">
-                <div [class]="item.isPro ? 'col-md-6' :'col-md-3'">
-                    <div class="wsk-cp-product">
-                        <div class="wsk-cp-img">
-                            <img [src]="item.imageUrl1" class="img-responsive" />
-                        </div>
-                        <div class="wsk-cp-text">
-                            <div class="category">
-                                <span>{{item.petType}}</span>
-                            </div>
-                            <div class="title-product">
-                                <h3>{{item.heading}}</h3>
-                            </div>
-                            <div class="description-prod">
-                                <p>{{item.description}}</p>
-                            </div>
-                            <div class="card-footer">
-                                <div class="wcf-left"><span class="price">Rs {{item.price}}</span></div>
-                                <div class="wcf-right">
-                                    <a class="buy-btn">
-                                        <mat-icon class="mt-2" aria-hidden="false" aria-label="Example home icon"
-                                            fontIcon="add_shopping_cart"></mat-icon>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </ng-container>
-        </div>
-
-        <mat-paginator [pageSize]="paginationType.landingPageSize" [pageSizeOptions]="paginationType.pageSizeOption"
-            aria-label="Select page" [showFirstLastButtons]="true">
-        </mat-paginator>
+<section class="home-section">
+    <div class="home-content">
+        <h3>Welcome to</h3>
+        <h1>PetOPia</h1>
+        <p>Sriilanka Animal Veterinary Hospitality Service</p>
+        <a href="#" class="btn">Get Started</a>
     </div>
-</div>
+</section>
+
+<section class="hero-one">
+    <div class="hero-one-content">
+        <img class="heroimg" src="../../../assets/img/brand/Cat.png" alt="img1" />
+        <div class="text-content">
+            <h2>We are Veterinary Hospitality Service Provider In Srilanka</h2>
+            <p>"Welcome to Petopia, Sri Lanka's premier online hub for pet care. From
+                veterinary consultations for dogs, cats, and more to
+                expert guidance on breeding and a wide array of pet accessories,
+                we cater to all your furry friends' needs. Experience top-notch service
+                and care for your beloved companions at Petopia."
+            </p>
+            <div class="button">
+                <div class="btn-10">
+                    Meet Doctors
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="hero-two">
+    <div class="hero-two-content">
+        <h3>Service</h3>
+        <div class="services">
+            <ul>
+                <li>
+                    Dental Services
+                </li>
+                <li>Medicine</li>
+                <li>House Visits</li>
+                <li>Pet Accessories</li>
+                <li>Pet Breeding</li>
+                <li>Comprehensive Pain Control</li>
+            </ul>
+        </div>
+    </div>
+    <img src="../../../assets/img/brand/img3.jpg" alt="img2">
+</section>

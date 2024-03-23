@@ -8,6 +8,8 @@ import { UserGeneral } from 'src/app/models/user/user-general.model';
 import { UserDataService } from 'src/app/services/user/user-data.service';
 import { UserApiService } from 'src/app/services/user/user.service';
 import { ResponseModel } from 'src/app/models/core/response.model';
+import { ImageUploaderComponent } from 'src/app/components/image-uploader/image-uploader.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -36,6 +38,7 @@ export class UserProfileComponent implements OnInit {
     private confirmService: ConfirmService,
     private userDataService: UserDataService,
     private userApiService: UserApiService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -47,6 +50,7 @@ export class UserProfileComponent implements OnInit {
       province: this.userInfo.province,
       zipCode: this.userInfo.zipCode,
     });
+    this.imageUrl = this.userInfo.userImage ? this.userInfo.userImage : 'https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png';
   }
 
   createForm(): void {
@@ -58,6 +62,19 @@ export class UserProfileComponent implements OnInit {
     });
   }
 
+  upload() {
+    const dialogRef = this.dialog.open(ImageUploaderComponent, {
+      data: null,
+      height: '320px',
+      width: '400px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result.isRefresh === true) {
+        this.imageUrl = result.url
+      }
+    });
+  }
 
   updateUser(): void {
     this.confirmService.confirm('Are you sure you want to update the user').subscribe((res: boolean) => {
@@ -72,11 +89,12 @@ export class UserProfileComponent implements OnInit {
           city: this.userForm.value.city,
           district: this.userForm.value.district,
           province: this.userForm.value.province,
-          zipCode: this.userForm.value.zipCode
+          zipCode: this.userForm.value.zipCode,
+          userImage: this.imageUrl,
         }).subscribe({
           next: (res: ResponseModel) => {
-            this.userDataService.loggedInUser = res.body;
             this.snackbarService.openSnackBar('User updated');
+            this.router.navigate(['login']);
           }
         });
       }

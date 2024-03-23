@@ -2,6 +2,7 @@ export const ALL_ROUTINGS: RouteDetails[] = [
   { routingUrl: 'dashboard', pageName: 'Dashboard' },
   { routingUrl: 'user-profile', pageName: 'User Profile' },
   { routingUrl: 'advertising', pageName: 'Advertising' },
+  { routingUrl: 'pet-shop', pageName: 'Pet Shop' },
   { routingUrl: 'advertisements', pageName: 'Advertisements' },
   { routingUrl: 'activities', pageName: 'Activities' },
   { routingUrl: 'appointments', pageName: 'Appointments' },
@@ -23,10 +24,11 @@ declare interface RouteInfo {
 }
 
 export const ROUTES: RouteInfo[] = [
-  { path: '/dashboard', title: 'Dashboard', icon: 'ni-tv-2 text-yellow', class: '', permissionLevel: [1, 2] },
-  { path: '/user-profile', title: 'User Profile', icon: 'ni-single-02 text-yellow', class: '', permissionLevel: [1, 2] },
-  { path: '/advertising', title: 'Advertising', icon: 'ni-bullet-list-67 text-yellow', class: '', permissionLevel: [1, 2] },
-  { path: '/advertisements', title: 'Advertisements', icon: 'ni-app text-yellow', class: '', permissionLevel: [1, 2] },
+  { path: '/dashboard', title: 'Dashboard', icon: 'ni-tv-2 text-yellow', class: '', permissionLevel: [1, 2, 3] },
+  { path: '/user-profile', title: 'User Profile', icon: 'ni-single-02 text-yellow', class: '', permissionLevel: [1, 2, 3] },
+  { path: '/advertising', title: 'Advertising', icon: 'ni-bullet-list-67 text-yellow', class: '', permissionLevel: [1, 2, 3] },
+  { path: '/pet-shop', title: 'Pet Shop', icon: 'ni-bullet-list-67 text-yellow', class: '', permissionLevel: [3] },
+  { path: '/advertisements', title: 'Advertisements', icon: 'ni-app text-yellow', class: '', permissionLevel: [1, 2, 3] },
   { path: '/activities', title: 'Activities', icon: 'ni-bag-17 text-yellow', class: '', permissionLevel: [1, 2] },
   { path: '/appointments', title: 'Appointments', icon: 'ni-calendar-grid-58 text-yellow', class: '', permissionLevel: [2] },
   { path: '/user-list', title: 'User', icon: 'ni-laptop text-yellow', class: '', permissionLevel: [2] },

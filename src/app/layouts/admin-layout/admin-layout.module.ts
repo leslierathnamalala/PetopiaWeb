@@ -10,9 +10,12 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { ActivitiesComponent } from 'src/app/pages/activities/activities.component';
 import { AdvertisementsComponent } from 'src/app/pages/advertisements/advertisements.component';
-import { AdvertisingComponent } from 'src/app/pages/advertising/advertising.component';
 import { AppointmentsComponent } from 'src/app/pages/appointments/appointments.component';
 import { DashboardComponent } from 'src/app/pages/dashboard/dashboard.component';
+import { MyClinicComponent } from 'src/app/pages/my-clinic/my-clinic.component';
+import { PetAdvertisingComponent } from 'src/app/pages/pet-advertising/pet-advertising.component';
+import { PetItemAdvertisingComponent } from 'src/app/pages/pet-item-advertising/pet-item-advertising.component';
+import { UserListComponent } from 'src/app/pages/user-list/user-list.component';
 import { ComponentsModule } from '../../components/components.module';
 import { MaterialModule } from '../../material/material.module';
 import { SchedulerComponent } from '../../pages/scheduler/scheduler.component';
@@ -21,8 +24,6 @@ import { CustomDateFormat } from '../../utils/date-format-pipe';
 import { CustomDateTimeFormat } from '../../utils/date-time-format-pipe';
 import { NoSpacesDirective } from '../../utils/directive/no-space.directive';
 import { AdminLayoutRoutingModule } from './admin-layout.routing.module';
-import { MyClinicComponent } from 'src/app/pages/my-clinic/my-clinic.component';
-import { UserListComponent } from 'src/app/pages/user-list/user-list.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -48,7 +49,8 @@ import { UserListComponent } from 'src/app/pages/user-list/user-list.component';
     NoSpacesDirective,
     ActivitiesComponent,
     AdvertisementsComponent,
-    AdvertisingComponent,
+    PetAdvertisingComponent,
+    PetItemAdvertisingComponent,
     AppointmentsComponent,
     DashboardComponent,
     MyClinicComponent,

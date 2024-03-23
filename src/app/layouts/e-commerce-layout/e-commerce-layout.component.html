@@ -1,28 +1,19 @@
-<div class="container">
-  <div class="navbar">
-    <div class="logo">
-      <a href="index.html"><img src="./assets/img/brand/logo--color.png" alt="RedStore" width="125px" /></a>
-    </div>
-    <nav>
-      <ul id="MenuItems">
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/e-commerce">E Commerce</a></li>
-        <li><a routerLink="/clinics">Clinics</a></li>
-        <li><a routerLink="/login">Sign In</a></li>
-        <li><a routerLink="/signup">Sign Up</a></li>
-      </ul>
-    </nav>
-    <a href="cart.html"><img src="https://i.ibb.co/PNjjx3y/cart.png" alt="" width="30px" height="30px" /></a>
-    <img src="https://i.ibb.co/6XbqwjD/menu.png" alt="" class="menu-icon" onclick="menutoggle()" />
-  </div>
+<div class="navbar">
+  <h1 class="hero-1">Petopia</h1>
+  <ul class="hero-2">
+    <li><a routerLink="/home">Home</a></li>
+    <li><a routerLink="/appointment">Appointment</a></li>
+    <li><a routerLink="/marketplace">Market Place</a></li>
+    <li><a routerLink="/pet-shop">Pet Shop</a></li>
+    <li><a routerLink="/clinics">Clinics</a></li>
+    <li><a routerLink="/login">Sign In</a></li>
+  </ul>
+  <mat-form-field appearance="fill">
+    <mat-label>Search</mat-label>
+    <input matInput [formControl]="searchControl" placeholder="Search">
+  </mat-form-field>
 </div>
-
-
 <router-outlet></router-outlet>
-
-
-
-
 <!-- Footer -->
 <div class="footer">
   <div class="container">

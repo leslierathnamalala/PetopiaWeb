@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-e-commerce-layout',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
 })
 export class ECommerceLayoutComponent {
 
+  searchControl: FormControl = new FormControl('');
   constructor() { }
 }

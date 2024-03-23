@@ -9,10 +9,12 @@ export class UserGeneral {
   userType: UserType;
   username: string;
   zipCode: string;
+  userImage: string;
 }
 
 export enum UserType {
   None = 0,
   Advertiser = 1,
-  Clinician = 2
+  Clinician = 2,
+  Admin = 3
 }

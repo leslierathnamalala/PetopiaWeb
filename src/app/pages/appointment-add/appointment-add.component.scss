@@ -1,0 +1,77 @@
+a {
+    color: black;
+    text-decoration:
+        underline;
+    font-size: 14px;
+}
+
+#input-status {
+    color: green;
+}
+
+.bg-light-seagreen {
+    background-color: #bed1c1;
+}
+
+.label-disabled {
+    background-color: #d8dfd9;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 5px;
+}
+
+.me-2 {
+    margin-right: .5rem !important;
+}
+
+.bg-primary {
+    background-color: rgb(4, 57, 39) !important;
+}
+
+.rounded-circle {
+    height: 8rem;
+    width: 8rem;
+}
+
+.blur-text {
+    color: transparent;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 1.5);
+}
+
+
+:host::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: rgb(4, 57, 39) !important;
+  }
+  
+  :host::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: rgb(4, 57, 39) !important;
+  }
+  
+  :host::ng-deep.mat-form-field-ripple {
+    /*change color of underline when focused*/
+    background-color: rgb(4, 57, 39) !important;
+  }
+  
+  :host::ng-deep.mat-form-field.mat-focused .mat-form-field-label {
+    color: #6ba500 !important;
+  }
+  
+  :host::ng-deep.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #6ba500 !important;
+  }
+  
+  :host::ng-deep.mat-form-field-type-mat-native-select.mat-focused:not(.mat-form-field-invalid) .mat-form-field-infix::after {
+    color: #6ba500 !important;
+  }
+  
+  :host::ng-deep.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #6ba500 !important;
+  }
+  
+  :host::ng-deep.mat-input-element {
+    caret-color: #6ba500 !important;
+  }
+  

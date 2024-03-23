@@ -98,7 +98,7 @@ export class MyClinicComponent implements OnInit, OnDestroy {
     this.loadingSubject.next(true);
 
     const clinic: any = {
-      userId: this.userId,
+      userId: this.userDataService.loggedInUser.userId,
       clinicName: this.clinicFormGroup.value.clinicName,
       address1: this.clinicFormGroup.value.address1,
       address2: this.clinicFormGroup.value.address2,
@@ -125,7 +125,7 @@ export class MyClinicComponent implements OnInit, OnDestroy {
     this.loadingSubject.next(true);
 
     const clinic: any = this.selectedClinic;
-    clinic.userId = this.userId;
+    clinic.userId = this.userDataService.loggedInUser.userId;
     clinic.clinicName = this.clinicFormGroup.value.clinicName;
     clinic.address1 = this.clinicFormGroup.value.address1;
     clinic.address2 = this.clinicFormGroup.value.address2;

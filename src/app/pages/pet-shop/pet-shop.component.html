@@ -1,0 +1,8 @@
+<mat-tab-group (selectedTabChange)="getTabType($event)">
+    <mat-tab *ngFor="let item of types" [label]="item"></mat-tab>
+</mat-tab-group>
+<div class="row mt-4">
+    <div class="col-12">
+        <app-pet-shop-items></app-pet-shop-items>
+    </div>
+</div>
